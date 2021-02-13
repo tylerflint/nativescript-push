@@ -585,22 +585,25 @@ class PushNotificationDelegateObserverImpl extends NSObject {
         response: UNNotificationResponse,
         completionHandler: () => void
     ): void {
+      
+        // let's ignore "dismiss" actions
+        if (response && response.actionIdentifier === UNNotificationDismissActionIdentifier) {
+            completionHandler();
+            return;
+        }
+      
         if (!(response.notification.request.trigger instanceof UNPushNotificationTrigger)) {
           
             // we don't know what this is so let's just trigger the handler directly
-            _pendingActionTakenNotifications.push({
-              type: 'local',
-              id: response.notification.request.identifier
+            _pendingNotifications.push({
+                local: true,
+                id: response.notification.request.identifier
             });
-
-            if (_notificationActionTakenCallback) {
-                _processPendingActionTakenNotifications();
+            
+            if (_receivedNotificationCallback) {
+                _processPendingNotifications();
             }
-          
-            return;
-        }
-        // let's ignore "dismiss" actions
-        if (response && response.actionIdentifier === UNNotificationDismissActionIdentifier) {
+            
             completionHandler();
             return;
         }
