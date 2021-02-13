@@ -1,6 +1,6 @@
 {
     "name": "@badideas/nativescript-push",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "description": "Very simple push notification plugin",
     "main": "./messaging",
     "typings": "./messaging.d.ts",
@@ -40,5 +40,6 @@
     },
     "license": "Apache-2.0",
     "homepage": "https://github.com/tylerflint/nativescript-push",
-    "readmeFilename": "README.md"
+    "readmeFilename": "README.md",
+    "gitHead": "b68c07afc5e1628ed62c83a441b464a7039bbcd9"
 }
