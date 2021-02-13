@@ -551,6 +551,15 @@ class PushNotificationDelegateObserverImpl extends NSObject {
         const userInfo = notification.request.content.userInfo;
         const userInfoJSON = toJsObject(userInfo);
         if (!(notification.request.trigger instanceof UNPushNotificationTrigger)) {
+            
+            // something else created the notification and we just happened to intercept it
+            // let's display the notification and get out of here
+            completionHandler(
+                UNNotificationPresentationOptions.Alert |
+                    UNNotificationPresentationOptions.Sound |
+                    UNNotificationPresentationOptions.Badge
+            );
+          
             return;
         }
         if (
@@ -577,6 +586,17 @@ class PushNotificationDelegateObserverImpl extends NSObject {
         completionHandler: () => void
     ): void {
         if (!(response.notification.request.trigger instanceof UNPushNotificationTrigger)) {
+          
+            // we don't know what this is so let's just trigger the handler directly
+            _pendingActionTakenNotifications.push({
+              type: 'local',
+              id: response.notification.request.identifier
+            });
+
+            if (_notificationActionTakenCallback) {
+                _processPendingActionTakenNotifications();
+            }
+          
             return;
         }
         // let's ignore "dismiss" actions
