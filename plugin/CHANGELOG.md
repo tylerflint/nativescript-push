@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/tylerflint/nativescript-push/compare/v1.1.9...v1.2.1) (2021-02-13)
+
+**Note:** Version bump only for package @badideas/nativescript-push
+
+
+
+
+
 ## [1.1.9](https://github.com/farfromrefug/nativescript-push/compare/v1.1.8...v1.1.9) (2021-01-13)
 
 **Note:** Version bump only for package @nativescript-community/push

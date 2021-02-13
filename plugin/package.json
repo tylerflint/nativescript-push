@@ -1,6 +1,6 @@
 {
     "name": "@badideas/nativescript-push",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "Very simple push notification plugin",
     "main": "./messaging",
     "typings": "./messaging.d.ts",
