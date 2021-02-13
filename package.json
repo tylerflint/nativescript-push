@@ -1,5 +1,5 @@
 {
-    "name": "@nativescript-community/push",
+    "name": "@badideas/nativescript-push",
     "version": "1.0.0",
     "description": "Very simple push notification plugin",
     "main": "./label",
@@ -38,14 +38,14 @@
         "iOS"
     ],
     "author": {
-        "name": "Martin Guillon",
-        "email": "martin@akylas.fr"
+        "name": "Tyler Flint",
+        "email": "tylerflint@gmail.com"
     },
     "bugs": {
-        "url": "https://github.com/nativescript-community/push/issues"
+        "url": "https://github.com/tylerflint/nativescript-push/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/nativescript-community/push",
+    "homepage": "https://github.com/tylerflint/nativescript-push",
     "readmeFilename": "README.md",
     "devDependencies": {
         "@commitlint/cli": "^11.0.0",
@@ -73,5 +73,8 @@
         "extends": [
             "@commitlint/config-conventional"
         ]
+    },
+    "dependencies": {
+        "ts-node": "^9.1.1"
     }
 }

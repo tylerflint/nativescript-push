@@ -1,9 +1,9 @@
 ﻿
-[npm-image]:http://img.shields.io/npm/v/@nativescript-community/push.svg
-[npm-url]:https://npmjs.org/package/@nativescript-community/push
-[downloads-image]:http://img.shields.io/npm/dm/@nativescript-community/push.svg
+[npm-image]:http://img.shields.io/npm/v/@badideas/nativescript-push.svg
+[npm-url]:https://npmjs.org/package/@badideas/nativescript-push
+[downloads-image]:http://img.shields.io/npm/dm/@badideas/nativescript-push.svg
 
-This plugin is an "extract" of the messaging part of [nativescript-plugin-firebase](https://github.com/EddyVerbruggen/nativescript-plugin-firebase)
+This plugin is a fork of [nativescript-community/push](https://github.com/nativescript-community/push), which was an "extract" of the messaging part of [nativescript-plugin-firebase](https://github.com/EddyVerbruggen/nativescript-plugin-firebase)
 It is only for people wanting to use firebase as less as possible ! No firebase on iOS!!!
 
 Thanks to Eddy for allowing this!
@@ -62,7 +62,7 @@ The end result should look like [this](https://github.com/EddyVerbruggen/natives
 In your main application JS file, you must call `init()`.
 
 ```typescript
-import * as messaging from '@nativescript-community/push';
+import * as messaging from '@badideas/nativescript-push';
 messaging.init();
 ```
 
@@ -71,7 +71,7 @@ On both iOS and Android the user can disable notifications for your app.
 If you want to check the current state of this setting, you can do:
 
 ```typescript
-import * as messaging from "@nativescript-community/push";
+import * as messaging from "@badideas/nativescript-push";
 
 console.log(`Notifications enabled? ${messaging.areNotificationsEnabled()}`);
 ```
@@ -80,7 +80,7 @@ console.log(`Notifications enabled? ${messaging.areNotificationsEnabled()}`);
 The easiest way to register for (receiving) push notifications is calling `registerForPushNotifications`, and passing in a few handlers:
 
 ```typescript
-import * as messaging from "@nativescript-community/push";
+import * as messaging from "@badideas/nativescript-push";
 
 messaging.registerForPushNotifications({
   onPushTokenReceivedCallback: (token: string): void => {
@@ -108,7 +108,7 @@ messaging.registerForPushNotifications({
 If - for some reason - you need to manually retrieve the current push registration token of the device, you can do:
 
 ```typescript
-import * as messaging from "@nativescript-community/push";
+import * as messaging from "@badideas/nativescript-push";
 
 messaging.getCurrentPushToken()
     .then(token => console.log(`Current push token: ${token}`));
@@ -129,7 +129,7 @@ They then type their reply, and (because of how the action was configured) the a
 <img src="https://raw.githubusercontent.com/EddyVerbruggen/nativescript-plugin-firebase/master/docs/images/messaging/interactive01.png" height="270px" alt="Interactive Notification, part 1"/> <img src="https://raw.githubusercontent.com/EddyVerbruggen/nativescript-plugin-firebase/master/docs/images/messaging/interactive02.png" height="270px" alt="Interactive Notification, part 2"/> <img src="https://raw.githubusercontent.com/EddyVerbruggen/nativescript-plugin-firebase/master/docs/images/messaging/interactive03.png" height="270px" alt="Interactive Notification, part 3"/> <img src="https://raw.githubusercontent.com/EddyVerbruggen/nativescript-plugin-firebase/master/docs/images/messaging/interactive04.png" height="270px" alt="Interactive Notification, part 4"/>
 
 ```typescript
-import * as messaging from "@nativescript-community/push";
+import * as messaging from "@badideas/nativescript-push";
 
 const model = new messaging.PushNotificationModel();
 model.iosSettings = new messaging.IosPushSettings();
